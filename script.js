@@ -1,12 +1,9 @@
-
 var isDate = function (input) {
-  if (input instanceof Date && !isNaN(input.getTime())) {
-    return true;
-  }
+  if (input instanceof Date && !isNaN(input.getTime())) return true;
   const date = new Date(input);
   return !isNaN(date.getTime());
 };
 
-// Do not change the code below.
+// Always convert to string for alert
 const input = prompt("Enter Date.");
-alert(String(isDate(input))); // Always a string for alert
+alert(String(isDate(input)));
