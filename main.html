@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <title>Date or Not</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <script type="text/javascript">
+        // Function to check if input is a valid date
+        var isDate = function (input) {
+            // Check if input is a valid Date object
+            if (input instanceof Date && !isNaN(input.getTime())) return true;
 
+            // Try converting input to a Date
+            const date = new Date(input);
+            return !isNaN(date.getTime());
+        };
+
+        // Prompt user for input
+        const userInput = prompt("Enter Date:");
+
+        // Check if it's a date and alert the result
+        alert(String(isDate(userInput)));
+    </script>
 </body>
-
 </html>
+
